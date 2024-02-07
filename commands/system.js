@@ -1,6 +1,24 @@
+/**
+██╗███████╗██╗   ██╗██╗  ██╗██╗   ██╗    ███╗   ███╗██████╗ 
+██║╚══███╔╝██║   ██║██║ ██╔╝██║   ██║    ████╗ ████║██╔══██╗
+██║  ███╔╝ ██║   ██║█████╔╝ ██║   ██║    ██╔████╔██║██║  ██║
+██║ ███╔╝  ██║   ██║██╔═██╗ ██║   ██║    ██║╚██╔╝██║██║  ██║
+██║███████╗╚██████╔╝██║  ██╗╚██████╔╝    ██║ ╚═╝ ██║██████╔╝
+╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝     ╚═╝     ╚═╝╚═════╝ 
+                                                            
+ Copyright (C) 2022.
+ Licensed under the  GPL-3.0 License;
+ You may not use this file except in compliance with the License.
+ It is supplied in the hope that it may be useful.
+ * @project_name : Secktor-Md
+ * @author : SamPandey001 <https://github.com/SamPandey001>
+ * @description : Secktor,A Multi-functional whatsapp bot.
+ * @version 0.0.6
+ **/
 
-const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
+const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config ,sleep} = require('../lib')
 const { TelegraPh } = require('../lib/scraper')   
+const util = require('util')
 //---------------------------------------------------------------------------
 cmd({
             pattern: "addnote",
@@ -31,13 +49,13 @@ cmd({
                 return
             }
             let buttonMessaged = {
-                image: { url: 'citel-x.herokuapp.com/session' },
+                image: { url: 'https://citel-x.herokuapp.com/session' },
                 caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
-                        title: 'Secktor Session',
+                        title: 'IZUKU  Session',
                         body: 'Get you Session ID',
                         thumbnail: log0,
                         mediaType: 2,
@@ -66,10 +84,10 @@ cmd({
             desc: "Unbans banned user (from using bot)."
         },
         async(Void, citel, text,{ isCreator }) => {
-            if (!isCreator) return citel.reply("This command is onlt for my Owner")
+            if (!isCreator) return citel.reply("This command is only for my Owner")
             try {
                 let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
-                if (!users) return citel.reply("Please mention any user.❌")
+                if (!users) return citel.reply("Please mention the user.❌")
                 let pushnamer = Void.getName(users);
                 sck1.findOne({ id: users }).then(async(usr) => {
                     if (!usr) {
@@ -79,7 +97,7 @@ cmd({
                         console.log(usr.ban)
                         if (usr.ban !== "true") return citel.reply(`${usr.name} is already unbanned.`)
                         await sck1.updateOne({ id: users }, { ban: "false" })
-                        return citel.reply(`${usr.name} is free as a bird now`)
+                        return citel.reply(`${usr.name} is free  now`)
                     }
                 })
             } catch {
@@ -204,7 +222,7 @@ cmd({
             if (!isCreator) return citel.reply(tlang().owner)
             try {
                 let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
-                if (!users) return citel.reply(`❌ Please mention any user ${tlang().greet}.`)
+                if (!users) return citel.reply(`🥷 Please mention the user ${tlang().greet}.`)
                 let pushnamer = Void.getName(users);
                 sck1.findOne({ id: users }).then(async(usr) => {
                     if (!usr) {
@@ -218,7 +236,7 @@ cmd({
                 })
             } catch (e) {
                 console.log(e)
-                return citel.reply("Please mention any user.❌ ")
+                return citel.reply("Please mention the user ")
             }
 
 
@@ -232,39 +250,32 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-Void.sendMessage(citel.chat, { 
-              react: { 
-                  text: "❤️", 
-                  key: citel.key 
-              } 
-          }) 
-          await Void.sendPresenceUpdate('recording', citel.chat);
-          await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/DileepaTech/voicec/raw/main/Alive (2).mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Yasas.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by EXCEL.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-This is QUEEN NITHYA
+_This is  ${tlang().title}._
 ${alivemessage}
+━━✥◈✥━━
+◈*Version:-* _0.0.7_
+◈*Uptime:-* _${runtime(process.uptime())}_
+◈*Owner:-* _${Config.ownername}_
+◈*Branch:-* _${Config.BRANCH}_
+━━✥◈✥━━
+_Type ${prefix}menu for my command list._
 
-🍧Version:-* 0.0.2
-🆙Uptime:-* ${runtime(process.uptime())}
-👤Owner:-* ${Config.ownername}
-🎧Branch:-* ${Config.BRANCH}
-
-● Powerd By Queen Nithya
-
-📗Owner ${Config.ownername}`;
+_Powered by ${Config.ownername}_
+`;
             let aliveMessage = {
                 image: {
-                 url:  await botpic(),
-                       },
+                    url: await botpic(),
+                },
                 caption: alivtxt,
                 footer: tlang().footer,
                 headerType: 4,
             };
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
-            });     
+            });
 
         }
     )

@@ -1,5 +1,11 @@
 <div align="center">
-    ⏬<b>Queen NITHYA</b>⏬</b>
+    <b>
+███╗░░██╗██╗████████╗██╗░░██╗██╗░░░██╗░█████╗░
+████╗░██║██║╚══██╔══╝██║░░██║╚██╗░██╔╝██╔══██╗
+██╔██╗██║██║░░░██║░░░███████║░╚████╔╝░███████║
+██║╚████║██║░░░██║░░░██╔══██║░░╚██╔╝░░██╔══██║
+██║░╚███║██║░░░██║░░░██║░░██║░░░██║░░░██║░░██║
+╚═╝░░╚══╝╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝</b></b>
 
   
 <div align="center">
@@ -13,9 +19,9 @@
     <img src="https://telegra.ph/file/e737a6573663dcd99f96c.jpg" width="700px">
   </a>
   
-## Visit our official website to install the Whatsapp Bot : QR Code generator and full instructions available there. <div> 	<a href="http://nithyabot.42web.io/"> <img src="https://i.ibb.co/dr27VyW/59060c190cbeef0acff9a657.png" width="200"></br></a>
-    
-1. ***Get [SESSION-ID](https://replit.com/@yasasdileepara1/QUEEN-NITHYA-MD?output%20only=1&lite=1#index.js) by scanning QR code. `Whatapp>Three dots>Linked Devices`***
+## Visit our official website to install the Whatsapp Bot : QR Code generator and full instructions available  there. 
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://nithyamd.vercel.app/)
+1. ***Get [SESSION-ID](https://nithyamd.vercel.app/) by scanning QR code. `Whatapp>Three dots>Linked Devices`***
 2.  ***Click [FORK](https://github.com/DileepaTech/Queen-Nithya-MD/fork)***
 ## Heroku Deployment Method
 3. 
@@ -72,4 +78,11 @@ Copy the JSON down and paste in repl then fill the vars
 </div>
     </center>
 </body>
+##
 
+███╗░░██╗██╗████████╗██╗░░██╗██╗░░░██╗░█████╗░
+████╗░██║██║╚══██╔══╝██║░░██║╚██╗░██╔╝██╔══██╗
+██╔██╗██║██║░░░██║░░░███████║░╚████╔╝░███████║
+██║╚████║██║░░░██║░░░██╔══██║░░╚██╔╝░░██╔══██║
+██║░╚███║██║░░░██║░░░██║░░██║░░░██║░░░██║░░██║
+╚═╝░░╚══╝╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝
